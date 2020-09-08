@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ray casting</title>
+
+  <style>
+    body {
+      background-color: #f0f0f0;
+      text-align: center;
+    }
+    canvas {
+      box-shadow: 3px 3px 6px #888888;
+    }
+  </style>
+</head>
+<body>
+  <h1>Ray casting</h1>
+  <canvas id="canvas"></canvas>
+
+  <script type="module">
+    import { Canvas } from './canvas.js';
+
+    window.onload = () => {
+      const canvasElement = document.getElementById('canvas');
+      const canvas = new Canvas(canvasElement);
+
+      document.addEventListener('keydown', canvas.onKeyDown.bind(canvas));
+      document.addEventListener('keyup', canvas.onKeyUp.bind(canvas));
+    };
+  </script>
+</body>
+</html>
